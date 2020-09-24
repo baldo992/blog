@@ -10,7 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\UsersController;
+use Illuminate\Support\Facades\Schema;
 
 Route::get('/', function () {
     return view('admin');
 });
+
+Route::resource('Users', ProjectController::class);
