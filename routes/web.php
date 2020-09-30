@@ -18,3 +18,14 @@ Route::get('/', function () {
 });
 
 Route::resource('Users', ProjectController::class);
+//register
+Route::get('register', 'Auth\RegisterController@register');
+Route::post('register', 'Auth\RegisterController@store');
+
+//login
+Route::get('login', 'Auth\LoginController@login')->name('login');
+Route::post('login', 'Auth\LoginController@authenticate');
+Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+
+//home
+Route::get('home', 'HomeController@home')->name('home');
