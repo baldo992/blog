@@ -17,9 +17,10 @@ Route::get('/', function () {
     return view('admin');
 });
 
+
 Route::resource('Users', ProjectController::class);
 //register
-Route::get('register', 'Auth\RegisterController@register');
+Route::get('register', 'Auth\RegisterController@register')->name('register');
 Route::post('register', 'Auth\RegisterController@store');
 
 //login
